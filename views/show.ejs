@@ -1,0 +1,18 @@
+<%- include("partials/header") %>
+
+<div class="ui main container text">
+    <div class="ui huge header"><%= article.title%></div>
+    <div class = "ui top attacher segment">
+        <div class="item">
+            <img src="<%= article.image%>" class = "ui centered rounded image">
+            <div class="content">
+                <span><%= article.created.toDateString() %></span>
+            </div>
+            <div class="description">
+                 <p><%- article.body%></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer") %>

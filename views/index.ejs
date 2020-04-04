@@ -1,0 +1,18 @@
+<%- include("partials/header") %>
+    
+<% elements.forEach((element) => { %>
+
+    <h1><%= element.title %></h1>
+
+    <img src="<%= element.image%>" alt="">
+
+    <p><%= element.body.substring(0,100)%>...</p>
+
+    <p><%= element.created%></p>
+
+    <a href="/blogs/<%= element._id%>" class = "ui red basic button">More info</a>
+
+    <%})%>
+
+
+<%- include("partials/footer") %>
