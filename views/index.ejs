@@ -1,18 +1,31 @@
 <%- include("partials/header") %>
+<div class = "ui main container text">
+    <div class = "ui hude header">Blog</div>
+        <div class = "ui top attacher segment">
+            <div class = "ui divided items">
+                <% elements.forEach((element) => { %>
+                    <div class="item">
+                        <div class="image">
+                            <img src="<%= element.image%>" alt="">
+                        </div>
+                        <div class="content">
+                            <a href="/blogs/<%= element._id%>" class="header"><%= element.title %></a>
+                            <div class="meta">
+                                <span><%= element.created.toDateString()%></span>
+                            </div>
+                            <div class="description">
+                                <p><%- element.body.substring(0,100)%>...</p>
+                            </div>
+                            <div class="extra">
+                                <a href="/blogs/<%= element._id%>" class = "ui floated basic violet button">More info <i class="right chevron icon"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                <%})%>
+        
+        
+        </div>
+    </div>
+</div>
     
-<% elements.forEach((element) => { %>
-
-    <h1><%= element.title %></h1>
-
-    <img src="<%= element.image%>" alt="">
-
-    <p><%= element.body.substring(0,100)%>...</p>
-
-    <p><%= element.created%></p>
-
-    <a href="/blogs/<%= element._id%>" class = "ui red basic button">More info</a>
-
-    <%})%>
-
-
 <%- include("partials/footer") %>
